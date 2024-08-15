@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,193 @@
 
 .read-the-docs {
   color: #888;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user,
+#guest {
+  display: none;
+}
+
+#box {
+  width: 80%;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#home-page,
+#catalog-page {
+  margin-top: 20px;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome-message h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.welcome-message h3 {
+  margin: 10px 0 0 0;
+  font-size: 1.5em;
+  color: #2980b9;
+}
+
+.book {
+  display: flex;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.book .image-wrap img {
+  max-width: 150px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.book h3 {
+  margin: 0;
+}
+
+.book p {
+  margin: 5px 0;
+}
+
+.rating {
+  color: gold;
+}
+
+.data-buttons .btn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.data-buttons .btn:hover {
+  background-color: #2980b9;
+}
+
+form {
+  margin: 20px 0;
+}
+
+form .container {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input,
+form textarea {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form .btn.submit {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form .btn.submit:hover {
+  background-color: #27ae60;
+}
+
+#book-details {
+  margin: 20px 0;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-section .book-header {
+  text-align: center;
+}
+
+.info-section .book-img {
+  max-width: 200px;
+  border-radius: 5px;
+}
+
+.buttons .button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.buttons .button:hover {
+  background-color: #c0392b;
+}
+
+.details-comments ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.details-comments .comment {
+  background-color: #ecf0f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+.create-comment {
+  margin: 20px 0;
 }
