@@ -3,7 +3,7 @@ export default function Header() {
         <>
             <header>
 
-                <h1><a class="home" href="#">BookReview</a></h1>
+                <h1><a className="home" href="#">BookReview</a></h1>
                 <nav>
                     <a href="#">All Reviews</a>
 

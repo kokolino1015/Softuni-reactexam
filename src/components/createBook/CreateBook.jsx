@@ -1,8 +1,8 @@
 export default function CreateBook() {
    return (
-    <section id="create-page" class="auth">
+    <section id="create-page" className="auth">
     <form id="create">
-        <div class="container">
+        <div className="container">
 
             <h1>Add Book Review</h1>
             <label for="book-title">Book Title:</label>
@@ -19,7 +19,7 @@ export default function CreateBook() {
 
             <label for="summary">Summary:</label>
             <textarea name="summary" id="summary"></textarea>
-            <input class="btn submit" type="submit" value="Add Review"/>
+            <input className="btn submit" type="submit" value="Add Review"/>
         </div>
     </form>
 </section>
