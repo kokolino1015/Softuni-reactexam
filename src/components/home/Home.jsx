@@ -1,55 +1,31 @@
+import { useEffect, useState } from "react";
+import moviesAPI from "../../api/moviesAPI";
+import LatestMovie from "./latestMovie/LatestMovie";
+
 export default function Home() {
+    const [latestMovies, setLatestMovies] = useState([])
+    useEffect(()=>{
+        (async ()=>{
+            const result = await moviesAPI.getAll();
+            setLatestMovies(result.reverse().slice(0, 3))
+        })()
+    }, [])
     return (
         <section id="welcome-world">
 
             <div className="welcome-message">
-                <h2>Explore New Books</h2>
-                <h3>Find your next favorite read</h3>
+                <h2>Explore New Movies</h2>
+                <h3>Find your next favorite watch</h3>
             </div>
-            <img src="./images/books_banner.png" alt="hero" />
+            {/* <img src="./images/books_banner.png" alt="hero" /> */}
 
                 <div id="home-page">
-                    <h1>Latest Reviews</h1>
+                    <h1>Latest Movies</h1>
 
-                    <div className="book">
-                        <div className="image-wrap">
-                            <img src="./images/book1.png" alt="Book 1" />
-                        </div>
-                        <h3>Book Title 1</h3>
-                        <p>Author: John Doe</p>
-                        <div className="rating">
-                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                        </div>
-                        <div className="data-buttons">
-                            <a href="#" className="btn details-btn">Details</a>
-                        </div>
-                    </div>
-                    <div className="book">
-                        <div className="image-wrap">
-                            <img src="./images/book2.png" alt="Book 2"  />
-                        </div>
-                        <h3>Book Title 2</h3>
-                        <p>Author: Jane Smith</p>
-                        <div className="rating">
-                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                        </div>
-                        <div className="data-buttons">
-                            <a href="#" className="btn details-btn">Details</a>
-                        </div>
-                    </div>
-                    <div className="book">
-                        <div className="image-wrap">
-                            <img src="./images/book3.png" alt="Book 3" />
-                        </div>
-                        <h3>Book Title 3</h3>
-                        <p>Author: Emily Johnson</p>
-                        <div className="rating">
-                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                        </div>
-                        <div className="data-buttons">
-                            <a href="#" className="btn details-btn">Details</a>
-                        </div>
-                    </div>
+                    {latestMovies.length > 0
+                        ? latestMovies.map(movie=><LatestMovie key={movie._id} {...movie}/>)
+                        : <p className="no-articles">No movies yet</p>
+                   }
 
                     
                     <p className="no-articles">No reviews yet</p>

@@ -76,13 +76,8 @@ nav {
   align-items: center;
 }
 
-#user,
-#guest {
-  display: none;
-}
-
 #box {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   background-color: white;
   padding: 20px;
@@ -110,7 +105,7 @@ nav {
   color: #2980b9;
 }
 
-.book {
+.movie {
   display: flex;
   margin: 20px 0;
   background-color: #f9f9f9;
@@ -118,17 +113,17 @@ nav {
   border-radius: 5px;
 }
 
-.book .image-wrap img {
+.movie .image-wrap img {
   max-width: 150px;
   margin-right: 20px;
   border-radius: 5px;
 }
 
-.book h3 {
+.movie h3 {
   margin: 0;
 }
 
-.book p {
+.movie p {
   margin: 5px 0;
 }
 
@@ -184,7 +179,7 @@ form .btn.submit:hover {
   background-color: #27ae60;
 }
 
-#book-details {
+#movie-details {
   margin: 20px 0;
 }
 
@@ -194,11 +189,11 @@ form .btn.submit:hover {
   align-items: center;
 }
 
-.info-section .book-header {
+.info-section .movie-header {
   text-align: center;
 }
 
-.info-section .book-img {
+.info-section .movie-img {
   max-width: 200px;
   border-radius: 5px;
 }
