@@ -1,18 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export function useForm(initialValues, submitCallback){
+export function useForm(initialValues, submitCallback, options = { reinatalizeForm: false }) {
     const [values, setValues] = useState(initialValues);
-    
+
+    useEffect(() => {
+        if (options.reinatalizeForm) {
+            setValues(initialValues);
+        }
+
+    }, [initialValues, options])
+
     const changeHandler = (e) => {
-        setValues( state => ({
+        setValues(state => ({
             ...state,
             [e.target.name]: e.target.value
         }))
+        console.log(e.target.value)
     }
 
-    const submitHandler = (e) => {
+    const reinatalizeForm = () => {
+        setValues(initialValues);
+    }
+    const submitHandler = async (e) => {
         e.preventDefault();
-        submitCallback(values);
+        await submitCallback(values);
+        setValues(initialValues)
     }
 
     return {

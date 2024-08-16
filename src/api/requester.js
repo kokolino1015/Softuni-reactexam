@@ -1,12 +1,14 @@
+import { getAccessToken } from "../utils/authUtils";
+
 export async function requester(method, url, data) {
     const options = {};
     
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = getAccessToken();
 
     if(accessToken){
         options.headers={
             ...options.headers,
-            'X-Authorization' : accessToken
+            'X-Authorization' : accessToken, 
         }
     }
     if (method !== 'GET') {
@@ -22,6 +24,9 @@ export async function requester(method, url, data) {
     console.log(options)
 
     const response = await fetch(url, options);
+    if(response.status===204){
+        return;
+    }
     const result = await response.json();
     if(!response.ok){
         console.log(result);

@@ -8,25 +8,16 @@ import CreateMovie from './components/createMovie/CreateMovie'
 import MovieList from './components/movieList/MovieList'
 // import CreateComment from './components/commentCreate/CommentCreate'
 import { useState } from 'react'
-import { AuthContext } from './contexts/AuthContext'
+import { AuthContextProvider } from './contexts/AuthContext'
 import MovieDetails from './components/movieDetails/MovieDetails'
+import RouteGuard from './components/common/RouteGuard'
+import EditMovie from './components/editMovie/EditMovie'
+import Logout from './components/logout/Logout'
 
 function App() {
-  const [authState, setAuthState] = useState({})
 
-  const changeAuthState = (state) => {
-    localStorage.setItem('accessToken', state.accessToken);
-    setAuthState(state);
-  }
-  const contextData = {
-    userId: authState._id,
-    email: authState.email,
-    accessToken: authState.accessToken,
-    isAuthenticated: !!authState.email,
-    changeAuthState,
-  }
   return (
-    <AuthContext.Provider value={contextData }>
+    <AuthContextProvider>
       <div id="box">
         <main id="main-content">
           <Header />
@@ -34,14 +25,18 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/movie/create' element={<CreateMovie />} />
+
+            <Route element={<RouteGuard />}>
+              <Route path='/movie/create' element={<CreateMovie />} />
+              <Route path="/movie/:movieId/edit" element={<EditMovie />} />
+              <Route path="/logout" element={<Logout />} />
+            </Route>
             <Route path='/movie/:movieId/details' element={<MovieDetails />} />
             <Route path='/movie/list' element={<MovieList />} />
-            {/* <Route path='/movie/:movieId/comment' element={<CreateComment />} /> */}
           </Routes>
         </main>
       </div>
-    </AuthContext.Provider>
+    </AuthContextProvider>
   )
 }
 
