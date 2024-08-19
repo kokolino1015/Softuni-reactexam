@@ -14,7 +14,7 @@ export function useGetAllMovies(){
 export function useGetOneMovie(movieId){
     const [movie, setMovie] = useState({
         title: '',
-        imageUrl: '',
+        img: '',
         description: "",
     });
     useEffect(() => {

@@ -15,8 +15,6 @@ export default function MovieList() {
                 :<h3 className="no-articles">No movies yet</h3>
             }
 
-
-            {/* <h3 className="no-articles">No reviews available</h3> */}
         </section>
     );
 }

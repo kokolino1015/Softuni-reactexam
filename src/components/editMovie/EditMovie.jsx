@@ -15,7 +15,7 @@ export default function EditMovie() {
     const [movie, setMovie] = useGetOneMovie(movieId);
     const { values, changeHandler, submitHandler
     } = useForm(Object.assign(initialValues, movie), async (values) => {
-        const isConfirmed = confirm('Are you sure');
+        const isConfirmed = confirm(`Are you sure that you want to edit ${movie.title}`);
         if (isConfirmed) {
             await moviesAPI.update(movieId, values);
             navigate(`/movie/${movieId}/details`);

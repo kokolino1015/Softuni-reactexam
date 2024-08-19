@@ -29,7 +29,7 @@ export default function MovieDetails() {
     })
     const movieDeleteHandler = async () => {
         try {
-            const isConfirmed = confirm('Are you sure');
+            const isConfirmed = confirm(`Are you sure that you want to delete ${movie.title}`);
             if (isConfirmed) {
                 await moviesAPI.remove(movieId);
                 navigate('/');
@@ -65,10 +65,8 @@ export default function MovieDetails() {
                                 <p>{comment.author.email}: {comment.text}</p>
                             </li>))
                         }
-                        {comments.length === 0 && <p className="no-comment">No comments.</p>}
+                        {comments.length === 0 && <p className="no-comment">No comments yet.</p>}
                     </ul>
-
-                    <p className="no-comment">No comments yet.</p>
                 </div>
 
                 {isOwner && <div className="buttons">

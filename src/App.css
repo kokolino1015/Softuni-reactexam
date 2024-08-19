@@ -51,7 +51,9 @@ body {
   background-color: #f0f0f0;
   color: #333;
 }
-
+#main-content{
+  width: 800px
+}
 header {
   background-color: #2c3e50;
   color: white;
@@ -181,6 +183,7 @@ form .btn.submit:hover {
 
 #movie-details {
   margin: 20px 0;
+  width: 100%;
 }
 
 .info-section {
@@ -194,7 +197,7 @@ form .btn.submit:hover {
 }
 
 .info-section .movie-img {
-  max-width: 200px;
+  max-width: 400px;
   border-radius: 5px;
 }
 

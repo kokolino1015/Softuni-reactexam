@@ -27,8 +27,6 @@ export default function Home() {
                         : <p className="no-articles">No movies yet</p>
                    }
 
-                    
-                    <p className="no-articles">No reviews yet</p>
                 </div>
         </section>
     );
